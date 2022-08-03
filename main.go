@@ -79,6 +79,7 @@ func readCsv(input string) ([]csvEntry, error) {
       end: strings.TrimSpace(entry[4]),
       lag: i_lag,
 		})
+    log.Printf("Adding entry for topic: %s", entry[1])
 	}
 
 	return listEntries, nil
