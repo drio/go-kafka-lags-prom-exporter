@@ -1,3 +1,4 @@
 client-ssl*
 Session.vim
 main
+go-kafka-lags-prom-exporter*
