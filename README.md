@@ -33,3 +33,18 @@ kafka_lag_exporter{group="drio-topic4-gid-4",partition="0",topic="drio-topic4"} 
 kafka_lag_exporter{group="drio-topic5-gid-5",partition="0",topic="drio-topic5"} 1
 ```
 
+# Running via docker
+
+You probably want to run this via docker. We provide a Dockerfile for that purpose.
+Also, see the makefile targets to help you run and test things:
+
+```sh
+> make -n docker/run
+GOOS=linux GOARCH=amd64 go build -o go-kafka-lags-prom-exporter.linux.amd64
+GOOS=darwin GOARCH=arm64 go build -o go-kafka-lags-prom-exporter.darwin.arm64
+docker build -t drio-go-kafka-lags-prom-exporter .
+docker run -d --name kafka-lags-prom-exporter -p 9898:9898 drio-go-kafka-lags-prom-exporter
+```
+
+The cmd runs the ./run.sh script. That script hardcodes a few things you may want to 
+modify for your needs.
