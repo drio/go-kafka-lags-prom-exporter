@@ -17,7 +17,7 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
-const version = "0.0.1"
+const version = "0.0.2"
 
 var (
   flgHelp bool
