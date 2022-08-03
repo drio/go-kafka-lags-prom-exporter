@@ -48,3 +48,9 @@ docker run -d --name kafka-lags-prom-exporter -p 9898:9898 drio-go-kafka-lags-pr
 
 The cmd runs the ./run.sh script. That script hardcodes a few things you may want to 
 modify for your needs.
+
+[Here](https://github.com/drio/observability_stack) you can see this tool
+running in the wild in a docker environment. See the
+[service](https://github.com/drio/observability_stack/tree/main/docker-obs/kafka-lag)
+details. Keep in mind that project uses ansible, concretely, ansible templates
+and it generates some files when running the playbook.
